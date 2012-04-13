@@ -1,0 +1,18 @@
+<%= form_for @list do |f| %>
+	
+	<label>Name:
+		<p><%= f.text_field :name ,:id=>"name" %></p>
+	</label>
+	 <%#= hidden_field_tag  :user_id , current_user.id %>
+	<label>Description:
+		<p><%= f.text_field :description,:id=>"description" %></p>
+	</label>
+	 <label>Priority:
+    <%= select "list", "priority", ['1' ,'2' ,'3' ,'4' ,'5'], {:tabindex=>"3", :id=>'priority', :name=>"priority"} %>
+
+
+	</label>
+     <%= f.hidden_field :user_id, :value => current_user.id %>
+	<p><%= f.submit %></p>
+	
+<% end %>

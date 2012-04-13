@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Application</title>
+   <div id="user_nav">
+    <% if user_signed_in? %>
+
+      <span> <%= link_to 'Sign out', destroy_user_session_path ,:confirm => "Are you sure want to Logout?"%></span>
+
+    <% else %>
+        <%= link_to 'Sign up', new_user_registration_path %> or <%= link_to 'Sign in', new_user_session_path %>
+    <% end %>
+</div>
+  <%= stylesheet_link_tag :all %>
+
+
+     <%#= javascript_include_tag "application" %>
+    <%#= javascript_include_tag 'jquerymin.js' %>
+  <%#= javascript_include_tag 'jquery-ui.min.js' %>
+   <%= javascript_include_tag :all %>
+  <%= javascript_include_tag 'jquery-1.7.1.min' %>
+
+
+  <%= csrf_meta_tag %>
+</head>
+<body>
+	
+	<div id="flash">
+	  <% flash.each do |key, value| -%>
+	    <div id="flash_<%= key %>"><%=h value %></div>
+	  <% end -%>
+	</div>
+
+<%= yield %>
+
+</body>
+</html>

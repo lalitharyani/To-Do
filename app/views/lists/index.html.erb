@@ -1,0 +1,18 @@
+<h1>Welcome</h1>
+
+ <% if user_signed_in? %>
+ <% if !@lists.nil?   %>
+
+
+ <% @lists.each do |list| %>
+
+	<h2><%= link_to "#{list.name}", list_url(list) %></h2>
+	<p><%= list.description %> - <%= link_to "Edit", edit_list_url(list) %> | <%= link_to "Delete", list_url(list),:confirm => "Are you sure want to delete #{list.name} list?", :method => :delete %></p>
+
+<% end %>
+
+<hr />
+
+        <%end %>
+    <%= link_to "Add new list", new_list_url %>
+ <% end %>

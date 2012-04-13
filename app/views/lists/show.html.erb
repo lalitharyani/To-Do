@@ -1,0 +1,27 @@
+
+<h2><%= @list.name %></h2>
+<p><%= @list.description %></p>
+
+<h3>Work to do</h3>
+<ul>
+	<% @list.tasks.each do |task| %>
+	<li><%= task.description %></li>
+	<% end %>
+</ul>
+
+<hr />
+
+<%= form_for [@list, @task] do |f| %>
+
+<p><%= f.text_field :description ,:id=>"description" %></p>
+
+	 <p><label>Priority:
+    <%= select "task", "priority", ['1' ,'2' ,'3' ,'4' ,'5'], {:id=>'priority', :name=>"priority"} %>
+</label></p>
+
+  <%= f.submit %>
+
+<% end %>
+
+<hr />
+<%= link_to "Back to all lists", lists_url %>
