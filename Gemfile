@@ -24,6 +24,12 @@ gem "jquery-rails"
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 
+group :development, :test do
+  # To use refinerycms-testing, uncomment it (if it's commented out) and run 'bundle install'
+  # Then, run 'rails generate refinerycms_testing' which will copy its support files.
+  # Finally, run 'rake' to run the tests.
+  # gem 'refinerycms-testing',    '~> 1.0.1'
+end
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
