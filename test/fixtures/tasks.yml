@@ -1,11 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  description: MyString
-  completed: false
+  description: that's good enough
   list_id: 1
+  priority: 1
 
 two:
-  description: MyString
-  completed: false
+  description: yes,this is alright
   list_id: 1
+  priority: 7

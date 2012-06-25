@@ -1,18 +1,30 @@
-<h1>Welcome</h1>
 
- <% if user_signed_in? %>
+<% if user_signed_in? %>
+     <h2>Welcome! <%= @ppp %> to My App  </h2>
+    </br>
  <% if !@lists.nil?   %>
+     <% if @bbb <= 1%>
+            <% if @bbb == 0%>
+            <h3>You do not have any list.Please create your list(s):</h3>
+              <% else %>
+             <h3>List:</h3>
+           <% end %>
+             <% else %>
+             <h3>Lists:</h3>
+            <% end %>
 
-
+ </br></br>
  <% @lists.each do |list| %>
 
-	<h2><%= link_to "#{list.name}", list_url(list) %></h2>
-	<p><%= list.description %> - <%= link_to "Edit", edit_list_url(list) %> | <%= link_to "Delete", list_url(list),:confirm => "Are you sure want to delete #{list.name} list?", :method => :delete %></p>
-
+     <h3>Name:</h3><h4><%= link_to "#{list.name}", list_url(list) %></h4>
+	 <h3>Description: </h3><%= list.description %> - <%= link_to "Edit", edit_list_url(list) %> | <%= link_to "Delete", list_url(list),:confirm => "Are you sure want to delete #{list.name}(list)?", :method => :delete %>
+     <h3>Priority: </h3><%= list.priority %>
+            </br>  </br> </br>
 <% end %>
 
-<hr />
+ <%end %>
+     <%= link_to "Add new list", new_list_url %>
+    <% else %>
+        <h2>Welcome! Guest to My App </h2>
 
-        <%end %>
-    <%= link_to "Add new list", new_list_url %>
  <% end %>

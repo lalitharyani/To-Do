@@ -1,9 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  name: MyString
-  description: MyString
+  name: lalit
+  description: ok it's fine
+  priority: 1
+  user_id: 4
 
 two:
-  name: MyString
-  description: MyString
+  name: nitin
+  description: it's very good
+  priority: 5
+  user_id: 7
